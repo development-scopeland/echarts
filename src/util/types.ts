@@ -113,6 +113,7 @@ export interface ECElement extends Element {
     // 2: emphasis
     hoverState?: 0 | 1 | 2;
     selected?: boolean;
+    marked?: boolean;
 
     z2EmphasisLift?: number;
     z2SelectLift?: number;
