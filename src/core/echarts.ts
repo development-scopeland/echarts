@@ -2279,14 +2279,14 @@ class ECharts extends Eventful<ECEventDefinition> {
             }
 
             // Only use states when it's exists.
-            if (el.selected && el.states.select) {
-                newStates.push('select');
-            }
             if (el.hoverState === HOVER_STATE_EMPHASIS && el.states.emphasis) {
                 newStates.push('emphasis');
             }
             else if (el.hoverState === HOVER_STATE_BLUR && el.states.blur) {
                 newStates.push('blur');
+            }
+            if (el.selected && el.states.select) {
+                newStates.push('select');
             }
             el.useStates(newStates);
         }
