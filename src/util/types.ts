@@ -646,7 +646,7 @@ export type OptionDataValueDate = Date | string | number;
 export type ModelOption = any;
 export type ThemeOption = Dictionary<any>;
 
-export type DisplayState = 'normal' | 'emphasis' | 'blur' | 'select';
+export type DisplayState = 'normal' | 'emphasis' | 'blur' | 'select' | 'mark';
 export type DisplayStateNonNormal = Exclude<DisplayState, 'normal'>;
 export type DisplayStateHostOption = {
     emphasis?: Dictionary<any>,
@@ -1468,6 +1468,7 @@ export interface DefaultStatesMixin {
     emphasis?: any
     select?: any
     blur?: any
+    mark?: any
 }
 
 export type DefaultEmphasisFocus = 'none' | 'self' | 'series';

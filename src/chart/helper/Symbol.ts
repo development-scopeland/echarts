@@ -214,6 +214,7 @@ class Symbol extends graphic.Group {
 
         let emphasisItemStyle;
         let blurItemStyle;
+        let markItemStyle;
         let selectItemStyle;
         let focus;
         let blurScope: BlurScope;
@@ -227,6 +228,7 @@ class Symbol extends graphic.Group {
         if (seriesScope) {
             emphasisItemStyle = seriesScope.emphasisItemStyle;
             blurItemStyle = seriesScope.blurItemStyle;
+            blurItemStyle = seriesScope.markItemStyle;
             selectItemStyle = seriesScope.selectItemStyle;
             focus = seriesScope.focus;
             blurScope = seriesScope.blurScope;
@@ -246,6 +248,7 @@ class Symbol extends graphic.Group {
             emphasisItemStyle = emphasisModel.getModel('itemStyle').getItemStyle();
             selectItemStyle = itemModel.getModel(['select', 'itemStyle']).getItemStyle();
             blurItemStyle = itemModel.getModel(['blur', 'itemStyle']).getItemStyle();
+            markItemStyle = itemModel.getModel(['mark', 'itemStyle']).getItemStyle();
 
             focus = emphasisModel.get('focus');
             blurScope = emphasisModel.get('blurScope');
@@ -335,6 +338,7 @@ class Symbol extends graphic.Group {
         emphasisState.style = emphasisItemStyle;
         symbolPath.ensureState('select').style = selectItemStyle;
         symbolPath.ensureState('blur').style = blurItemStyle;
+        symbolPath.ensureState('mark').style = markItemStyle;
 
         if (hoverScale) {
             const scaleRatio = Math.max(isNumber(hoverScale) ? hoverScale : 1.1, 3 / this._sizeY);

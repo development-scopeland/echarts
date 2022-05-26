@@ -117,6 +117,7 @@ export interface SymbolDrawItemModelOption extends SymbolOptionMixin<object>,
 export interface SymbolDrawSeriesScope {
     emphasisItemStyle?: ZRStyleProps
     blurItemStyle?: ZRStyleProps
+    markItemStyle?: ZRStyleProps
     selectItemStyle?: ZRStyleProps
 
     focus?: DefaultEmphasisFocus
@@ -139,6 +140,7 @@ function makeSeriesScope(data: SeriesData): SymbolDrawSeriesScope {
     return {
         emphasisItemStyle: emphasisModel.getModel('itemStyle').getItemStyle(),
         blurItemStyle: seriesModel.getModel(['blur', 'itemStyle']).getItemStyle(),
+        markItemStyle: seriesModel.getModel(['mark', 'itemStyle']).getItemStyle(),
         selectItemStyle: seriesModel.getModel(['select', 'itemStyle']).getItemStyle(),
 
         focus: emphasisModel.get('focus'),

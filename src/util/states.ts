@@ -83,8 +83,8 @@ export const HOVER_STATE_NORMAL: 0 = 0;
 export const HOVER_STATE_BLUR: 1 = 1;
 export const HOVER_STATE_EMPHASIS: 2 = 2;
 
-export const SPECIAL_STATES = ['emphasis', 'blur', 'select'] as const;
-export const DISPLAY_STATES = ['normal', 'emphasis', 'blur', 'select'] as const;
+export const SPECIAL_STATES = ['emphasis', 'blur', 'select', 'mark'] as const;
+export const DISPLAY_STATES = ['normal', 'emphasis', 'blur', 'select', 'mark'] as const;
 
 export const Z2_EMPHASIS_LIFT = 10;
 export const Z2_SELECT_LIFT = 9;
@@ -201,6 +201,9 @@ export function setStatesFlag(el: ECElement, stateName: DisplayState) {
             break;
         case 'blur':
             el.hoverState = HOVER_STATE_BLUR;
+            break;
+        case 'mark':
+            el.marked = true;
             break;
         case 'select':
             el.selected = true;
@@ -321,6 +324,22 @@ function createSelectDefaultState(
     return state;
 }
 
+function createMarkDefaultState(
+    el: Displayable,
+    stateName: 'mark',
+    state: Displayable['states'][number]
+): DisplayableState {
+    if (state) {
+        // TODO Share with textContent?
+        if (state.z2 == null) {
+            state = extend({}, state);
+            const z2SelectLift = (el as ECElement).z2SelectLift;
+            state.z2 = el.z2 + (z2SelectLift != null ? z2SelectLift : Z2_SELECT_LIFT);
+        }
+    }
+    return state;
+}
+
 function createBlurDefaultState(
     el: Displayable,
     stateName: 'blur',
@@ -361,6 +380,9 @@ function elementStateProxy(this: Displayable, stateName: string, targetStates?: 
         }
         else if (stateName === 'select') {
             return createSelectDefaultState(this, stateName, state);
+        }
+        else if (stateName === 'mark') {
+            return createMarkDefaultState(this, stateName, state);
         }
     }
     return state;
@@ -813,18 +835,18 @@ export function enableHoverFocus(el: Element, focus: InnerFocus, blurScope: Blur
     }
 }
 
-const OTHER_STATES = ['emphasis', 'blur', 'select'] as const;
+const OTHER_STATES = ['emphasis', 'blur', 'select', 'mark'] as const;
 const defaultStyleGetterMap: Dictionary<'getItemStyle' | 'getLineStyle' | 'getAreaStyle'> = {
     itemStyle: 'getItemStyle',
     lineStyle: 'getLineStyle',
     areaStyle: 'getAreaStyle'
 };
 /**
- * Set emphasis/blur/selected states of element.
+ * Set emphasis/blur/selected/mark states of element.
  */
 export function setStatesStylesFromModel(
     el: Displayable,
-    itemModel: Model<Partial<Record<'emphasis' | 'blur' | 'select', any>>>,
+    itemModel: Model<Partial<Record<'emphasis' | 'blur' | 'select' | 'mark', any>>>,
     styleType?: string, // default itemStyle
     getter?: (model: Model) => Dictionary<any>
 ) {
