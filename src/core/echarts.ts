@@ -1944,7 +1944,7 @@ class ECharts extends Eventful<ECEventDefinition> {
                 }
             });
 
-            if (updateMethod !== 'none' && !isHighDown && !isSelectChange && !cptType) {
+            if (updateMethod !== 'none' && !isHighDown && !isSelectChange && !cptType && !isMarkChange) {
                 try {
                     // Still dirty
                     if (this[PENDING_UPDATE]) {
