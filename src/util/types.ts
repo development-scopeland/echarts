@@ -1485,6 +1485,7 @@ export interface StatesMixinBase {
     emphasis?: unknown
     select?: unknown
     blur?: unknown
+    mark?: unknown
 }
 
 export interface StatesOptionMixin<
@@ -1521,6 +1522,10 @@ export interface StatesOptionMixin<
      * Blur states.
      */
     blur?: StateOption & StatesMixin['blur']
+    /**
+     * Mark states
+     */
+    mark?: StateOption & StatesMixin['mark']
 }
 
 export interface UniversalTransitionOption {

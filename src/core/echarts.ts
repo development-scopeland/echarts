@@ -2273,8 +2273,8 @@ class ECharts extends Eventful<ECEventDefinition> {
             // Keep other states.
             for (let i = 0; i < oldStates.length; i++) {
                 const stateName = oldStates[i];
-                if (!(stateName === 'emphasis' || stateName === 'blur' ||
-                        stateName === 'select' || stateName === 'mark')) {
+                if (!(stateName === 'emphasis' || stateName === 'blur'
+                        || stateName === 'select' || stateName === 'mark')) {
                     newStates.push(stateName);
                 }
             }

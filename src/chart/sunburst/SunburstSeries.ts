@@ -152,7 +152,7 @@ export interface SunburstSeriesOption extends
 interface SunburstSeriesModel {
     getFormattedLabel(
         dataIndex: number,
-        state?: 'emphasis' | 'normal' | 'highlight' | 'blur' | 'select'
+        state?: 'emphasis' | 'normal' | 'highlight' | 'blur' | 'select' | 'mark'
     ): string
 }
 class SunburstSeriesModel extends SeriesModel<SunburstSeriesOption> {
