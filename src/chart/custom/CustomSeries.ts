@@ -140,6 +140,7 @@ export interface CustomDisplayableOption extends CustomBaseElementOption, Partia
     emphasis?: CustomDisplayableOptionOnState;
     blur?: CustomDisplayableOptionOnState;
     select?: CustomDisplayableOptionOnState;
+    mark?: CustomDisplayableOptionOnState;
 }
 export interface CustomDisplayableOptionOnState extends Partial<Pick<
     Displayable, TransformProp | 'textConfig' | 'z2'

@@ -2273,7 +2273,8 @@ class ECharts extends Eventful<ECEventDefinition> {
             // Keep other states.
             for (let i = 0; i < oldStates.length; i++) {
                 const stateName = oldStates[i];
-                if (!(stateName === 'emphasis' || stateName === 'blur' || stateName === 'select')) {
+                if (!(stateName === 'emphasis' || stateName === 'blur'
+                        || stateName === 'select' || stateName === 'mark')) {
                     newStates.push(stateName);
                 }
             }
@@ -2284,6 +2285,9 @@ class ECharts extends Eventful<ECEventDefinition> {
             }
             else if (el.hoverState === HOVER_STATE_BLUR && el.states.blur) {
                 newStates.push('blur');
+            }
+            if (el.marked && el.states.mark) {
+                newStates.push('mark');
             }
             if (el.selected && el.states.select) {
                 newStates.push('select');

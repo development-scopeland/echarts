@@ -104,18 +104,21 @@ const EMPHASIS = 'emphasis' as const;
 const NORMAL = 'normal' as const;
 const BLUR = 'blur' as const;
 const SELECT = 'select' as const;
-const STATES = [NORMAL, EMPHASIS, BLUR, SELECT] as const;
+const MARK = 'mark' as const;
+const STATES = [NORMAL, EMPHASIS, BLUR, SELECT, MARK] as const;
 const PATH_ITEM_STYLE = {
     normal: ['itemStyle'],
     emphasis: [EMPHASIS, 'itemStyle'],
     blur: [BLUR, 'itemStyle'],
-    select: [SELECT, 'itemStyle']
+    select: [SELECT, 'itemStyle'],
+    mark: [MARK, 'itemStyle']
 } as const;
 const PATH_LABEL = {
     normal: ['label'],
     emphasis: [EMPHASIS, 'label'],
     blur: [BLUR, 'label'],
-    select: [SELECT, 'label']
+    select: [SELECT, 'label'],
+    mark: [MARK, 'label']
 } as const;
 const DEFAULT_TRANSITION: ElementRootTransitionProp[] = ['x', 'y'];
 // Use prefix to avoid index to be the same as el.name,
@@ -140,12 +143,17 @@ type AttachedTxInfo = {
         cfg: ElementTextConfig;
         conOpt: CustomElementOptionOnState;
     };
+    mark: {
+        cfg: ElementTextConfig;
+        conOpt: CustomElementOptionOnState;
+    };
 };
 const attachedTxInfoTmp = {
     normal: {},
     emphasis: {},
     blur: {},
-    select: {}
+    select: {},
+    mark: {}
 } as AttachedTxInfo;
 
 
