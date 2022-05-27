@@ -228,7 +228,7 @@ class Symbol extends graphic.Group {
         if (seriesScope) {
             emphasisItemStyle = seriesScope.emphasisItemStyle;
             blurItemStyle = seriesScope.blurItemStyle;
-            blurItemStyle = seriesScope.markItemStyle;
+            markItemStyle = seriesScope.markItemStyle;
             selectItemStyle = seriesScope.selectItemStyle;
             focus = seriesScope.focus;
             blurScope = seriesScope.blurScope;
