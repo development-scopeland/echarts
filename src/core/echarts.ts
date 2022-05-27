@@ -2298,11 +2298,11 @@ class ECharts extends Eventful<ECEventDefinition> {
             else if (el.hoverState === HOVER_STATE_BLUR && el.states.blur) {
                 newStates.push('blur');
             }
-            if (el.marked && el.states.mark) {
-                newStates.push('mark');
-            }
             if (el.selected && el.states.select) {
                 newStates.push('select');
+            }
+            if (el.marked && el.states.mark) {
+                newStates.push('mark');
             }
             el.useStates(newStates);
         }
