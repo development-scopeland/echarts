@@ -78,7 +78,12 @@ import {
     findComponentHighDownDispatchers,
     blurComponent,
     handleGlobalMouseOverForHighDown,
-    handleGlobalMouseOutForHighDown
+    handleGlobalMouseOutForHighDown,
+    MARK_ACTION_TYPE,
+    UNMARK_ACTION_TYPE,
+    TOGGLE_MARK_ACTION_TYPE,
+    isMarkChangePayload,
+    toggleMarkFromPayload
 } from '../util/states';
 import * as modelUtil from '../util/model';
 import {throttle} from '../util/throttle';
@@ -1615,6 +1620,12 @@ class ECharts extends Eventful<ECEventDefinition> {
                         markStatusToUpdate(ecIns);
                     }
                 }
+                else if (isMarkChangePayload(payload)) {
+                    if (model instanceof SeriesModel) {
+                        toggleMarkFromPayload(model, payload, ecIns._api);
+                        markStatusToUpdate(ecIns);
+                    }
+                }
             }, ecIns);
 
             ecModel && ecModel.eachComponent(condition, function (model) {
@@ -1897,6 +1908,7 @@ class ECharts extends Eventful<ECEventDefinition> {
             const eventObjBatch: ECEventData[] = [];
             let eventObj: ECActionEvent;
 
+            const isMarkChange = isMarkChangePayload(payload);
             const isSelectChange = isSelectChangePayload(payload);
             const isHighDown = isHighDownPayload(payload);
 
@@ -1921,7 +1933,7 @@ class ECharts extends Eventful<ECEventDefinition> {
                     updateDirectly(this, updateMethod, batchItem as Payload, componentMainType);
                     markStatusToUpdate(this);
                 }
-                else if (isSelectChange) {
+                else if (isSelectChange || isMarkChange) {
                     // At present `dispatchAction({ type: 'select', ... })` is not supported on components.
                     // geo still use 'geoselect'.
                     updateDirectly(this, updateMethod, batchItem as Payload, 'series');
@@ -3056,6 +3068,24 @@ registerAction({
     type: TOGGLE_SELECT_ACTION_TYPE,
     event: TOGGLE_SELECT_ACTION_TYPE,
     update: TOGGLE_SELECT_ACTION_TYPE
+}, noop);
+
+registerAction({
+    type: MARK_ACTION_TYPE,
+    event: MARK_ACTION_TYPE,
+    update: MARK_ACTION_TYPE
+}, noop);
+
+registerAction({
+    type: UNMARK_ACTION_TYPE,
+    event: UNMARK_ACTION_TYPE,
+    update: UNMARK_ACTION_TYPE
+}, noop);
+
+registerAction({
+    type: TOGGLE_MARK_ACTION_TYPE,
+    event: TOGGLE_MARK_ACTION_TYPE,
+    update: TOGGLE_MARK_ACTION_TYPE
 }, noop);
 
 // Default theme

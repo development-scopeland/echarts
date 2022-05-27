@@ -96,6 +96,10 @@ export const SELECT_ACTION_TYPE = 'select';
 export const UNSELECT_ACTION_TYPE = 'unselect';
 export const TOGGLE_SELECT_ACTION_TYPE = 'toggleSelect';
 
+export const MARK_ACTION_TYPE = 'mark';
+export const UNMARK_ACTION_TYPE = 'unmark';
+export const TOGGLE_MARK_ACTION_TYPE = 'toggleMark';
+
 type ExtendedProps = {
     __highByOuter: number
 
@@ -735,6 +739,43 @@ export function handleGlobalMouseOutForHighDown(
     }
 }
 
+export function toggleMarkFromPayload(
+    seriesModel: SeriesModel,
+    payload: Payload,
+    api: ExtensionAPI
+) {
+    if (!(isMarkChangePayload(payload))) {
+        return;
+    }
+
+    const dataType = payload.dataType;
+    const data = seriesModel.getData(dataType);
+    const action = payload.type;
+    const allData = seriesModel.getAllData();
+
+    let dataIndex = queryDataIndex(data, payload);
+
+    if (!isArray(dataIndex)) {
+        dataIndex = [dataIndex];
+    }
+
+    each(allData, function (_a) {
+        const data = _a.data;
+        data.eachItemGraphicEl(function (el: any, idx) {
+            if (!(dataIndex as number[]).includes(idx)) {
+                return;
+            }
+            const marked = el.marked;
+            if (marked && action === 'mark') {
+                return;
+            }
+            if (!marked && action === 'unmark') {
+                return;
+            }
+            traverseUpdateState(el, (el: any) => el.marked = !marked);
+        });
+    });
+}
 
 export function toggleSelectionFromPayload(
     seriesModel: SeriesModel,
@@ -940,6 +981,13 @@ export function isSelectChangePayload(payload: Payload) {
     return payloadType === SELECT_ACTION_TYPE
         || payloadType === UNSELECT_ACTION_TYPE
         || payloadType === TOGGLE_SELECT_ACTION_TYPE;
+}
+
+export function isMarkChangePayload(payload: Payload) {
+    const payloadType = payload.type;
+    return payloadType === MARK_ACTION_TYPE
+        || payloadType === UNMARK_ACTION_TYPE
+        || payloadType === TOGGLE_MARK_ACTION_TYPE;
 }
 
 export function isHighDownPayload(payload: Payload): payload is HighlightPayload | DownplayPayload {
