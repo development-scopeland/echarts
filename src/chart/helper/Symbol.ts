@@ -27,7 +27,7 @@ import { ColorString, BlurScope, AnimationOption, ZRColor, AnimationOptionMixin 
 import SeriesModel from '../../model/Series';
 import { PathProps } from 'zrender/src/graphic/Path';
 import { SymbolDrawSeriesScope, SymbolDrawItemModelOption } from './SymbolDraw';
-import { extend, isNumber } from 'zrender/src/core/util';
+import { extend } from 'zrender/src/core/util';
 import { setLabelStyle, getLabelStatesModels } from '../../label/labelStyle';
 import ZRImage from 'zrender/src/graphic/Image';
 import { saveOldStyle } from '../../animation/basicTransition';
@@ -340,11 +340,19 @@ class Symbol extends graphic.Group {
         symbolPath.ensureState('blur').style = blurItemStyle;
         symbolPath.ensureState('mark').style = markItemStyle;
 
-        if (hoverScale) {
-            const scaleRatio = Math.max(isNumber(hoverScale) ? hoverScale : 1.1, 3 / this._sizeY);
-            emphasisState.scaleX = this._sizeX * scaleRatio;
-            emphasisState.scaleY = this._sizeY * scaleRatio;
-        }
+        // null / undefined / true means to use default strategy.
+        // 0 / false / negative number / NaN / Infinity means no scale.
+        const scaleRatio =
+            hoverScale == null || hoverScale === true
+                ? Math.max(1.1, 3 / this._sizeY)
+                // PENDING: restrict hoverScale > 1? It seems unreasonable to scale down
+                : isFinite(hoverScale as number) && hoverScale > 0
+                    ? +hoverScale
+                    : 1;
+        // always set scale to allow resetting
+        emphasisState.scaleX = this._sizeX * scaleRatio;
+        emphasisState.scaleY = this._sizeY * scaleRatio;
+
         this.setSymbolScale(1);
 
         toggleHoverEmphasis(this, focus, blurScope, emphasisDisabled);
