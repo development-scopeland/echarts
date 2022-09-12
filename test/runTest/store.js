@@ -80,8 +80,7 @@ function getRunHash(params) {
     return [
         params.expectedVersion,
         params.actualVersion,
-        params.renderer,
-        params.useCoarsePointer
+        params.renderer
     ].join(TEST_HASH_SPLITTER);
 }
 
@@ -93,8 +92,7 @@ function parseRunHash(str) {
     return {
         expectedVersion: parts[0],
         actualVersion: parts[1],
-        renderer: parts[2],
-        useCoarsePointer: parts[3]
+        renderer: parts[2]
     };
 }
 
@@ -113,8 +111,7 @@ module.exports.checkStoreVersion = function (runParams) {
     console.log('Store ', _runHash);
     return storeParams.expectedVersion === runParams.expectedVersion
         && storeParams.actualVersion === runParams.actualVersion
-        && storeParams.renderer === runParams.renderer
-        && storeParams.useCoarsePointer === runParams.useCoarsePointer;
+        && storeParams.renderer === runParams.renderer;
 }
 
 function getResultFilePath() {

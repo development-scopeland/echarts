@@ -51,7 +51,7 @@ function updateMarkerLayout(
         }
         // Chart like bar may have there own marker positioning logic
         else if (seriesModel.getMarkerPosition) {
-            // Use the getMarkerPosition
+            // Use the getMarkerPoisition
             point = seriesModel.getMarkerPosition(
                 mpData.getValues(mpData.dimensions, idx)
             );

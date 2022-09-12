@@ -359,8 +359,7 @@ class SliderZoomView extends DataZoomView {
         const oldSize = this._shadowSize || [];
         const seriesModel = info.series;
         const data = seriesModel.getRawData();
-        const candlestickDim = seriesModel.getShadowDim && seriesModel.getShadowDim();
-        const otherDim: string = candlestickDim && data.getDimensionInfo(candlestickDim)
+        const otherDim: string = seriesModel.getShadowDim
             ? seriesModel.getShadowDim() // @see candlestick
             : info.otherDim;
 

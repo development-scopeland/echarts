@@ -131,7 +131,6 @@ function startTests(testsNameList, socket, {
     actualVersion,
     expectedVersion,
     renderer,
-    useCoarsePointer,
     noSave
 }) {
     console.log('Received: ', testsNameList.join(','));
@@ -191,7 +190,6 @@ function startTests(testsNameList, socket, {
                 '--actual', actualVersion,
                 '--expected', expectedVersion,
                 '--renderer', renderer || '',
-                '--use-coarse-pointer', useCoarsePointer,
                 '--threads', Math.min(threadsCount, CLI_FIXED_THREADS_COUNT),
                 '--dir', getResultBaseDir(),
                 ...(noHeadless ? ['--no-headless'] : []),
@@ -341,7 +339,6 @@ async function start() {
                         actualVersion: data.actualVersion,
                         expectedVersion: data.expectedVersion,
                         renderer: data.renderer,
-                        useCoarsePointer: data.useCoarsePointer,
                         noSave: false
                     }
                 );
@@ -402,7 +399,6 @@ async function start() {
                     actualVersion: data.actualVersion,
                     expectedVersion: data.expectedVersion,
                     renderer: data.renderer || '',
-                    useCoarsePointer: data.useCoarsePointer,
                     noSave: true
                 });
             }

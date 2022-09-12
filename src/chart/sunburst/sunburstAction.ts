@@ -87,7 +87,7 @@ export function installSunburstAction(registers: EChartsExtensionInstallRegister
             }
 
             if (__DEV__) {
-                deprecateReplaceLog('sunburstHighlight', 'highlight');
+                deprecateReplaceLog('highlight', 'sunburstHighlight');
             }
 
             // Fast forward action
@@ -103,7 +103,7 @@ export function installSunburstAction(registers: EChartsExtensionInstallRegister
             payload = extend({}, payload);
 
             if (__DEV__) {
-                deprecateReplaceLog('sunburstUnhighlight', 'downplay');
+                deprecateReplaceLog('downplay', 'sunburstUnhighlight');
             }
 
             api.dispatchAction(extend(payload, {

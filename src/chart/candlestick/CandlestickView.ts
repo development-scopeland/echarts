@@ -358,14 +358,12 @@ function createLarge(
 
     const elP = new LargeBoxPath({
         shape: {points: largePoints},
-        __sign: 1,
-        ignoreCoarsePointer: true
+        __sign: 1
     });
     group.add(elP);
     const elN = new LargeBoxPath({
         shape: {points: largePoints},
-        __sign: -1,
-        ignoreCoarsePointer: true
+        __sign: -1
     });
     group.add(elN);
 
@@ -399,3 +397,4 @@ function setLargeStyle(sign: number, el: LargeBoxPath, seriesModel: CandlestickS
 
 
 export default CandlestickView;
+

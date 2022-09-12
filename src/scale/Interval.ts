@@ -250,8 +250,7 @@ class IntervalScale<SETTING extends Dictionary<unknown> = Dictionary<unknown>> e
         if (extent[0] === extent[1]) {
             if (extent[0] !== 0) {
                 // Expand extent
-                // Note that extents can be both negative. See #13154
-                const expandSize = Math.abs(extent[0]);
+                const expandSize = extent[0];
                 // In the fowllowing case
                 //      Axis has been fixed max 100
                 //      Plus data are all 100 and axis extent are [100, 100].
