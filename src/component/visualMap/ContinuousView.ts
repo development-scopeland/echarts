@@ -37,9 +37,8 @@ import { parsePercent } from 'zrender/src/contain/text';
 import { setAsHighDownDispatcher } from '../../util/states';
 import { createSymbol } from '../../util/symbol';
 import ZRImage from 'zrender/src/graphic/Image';
-import { ECData, getECData } from '../../util/innerStore';
+import { getECData } from '../../util/innerStore';
 import { createTextStyle } from '../../label/labelStyle';
-import { findEventDispatcher } from '../../util/event';
 
 const linearMap = numberUtil.linearMap;
 const each = zrUtil.each;
@@ -817,23 +816,16 @@ class ContinuousView extends VisualMapView {
     }
 
     private _hoverLinkFromSeriesMouseOver(e: ElementEvent) {
-        let ecData: ECData;
+        const el = e.target;
+        const visualMapModel = this.visualMapModel;
 
-        findEventDispatcher(e.target, target => {
-            const currECData = getECData(target);
-            if (currECData.dataIndex != null) {
-                ecData = currECData;
-                return true;
-            }
-        }, true);
-
-        if (!ecData) {
+        if (!el || getECData(el).dataIndex == null) {
             return;
         }
+        const ecData = getECData(el);
 
         const dataModel = this.ecModel.getSeriesByIndex(ecData.seriesIndex);
 
-        const visualMapModel = this.visualMapModel;
         if (!visualMapModel.isTargetSeries(dataModel)) {
             return;
         }

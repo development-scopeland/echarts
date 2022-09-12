@@ -28,8 +28,10 @@ export default {
           "id":"0",
           "name":"Myriel",
           "label":{
-            "formatter":"Myriel",
-            "show":false
+            "normal":{
+              "formatter":"Myriel",
+              "show":false
+            }
           },
           "symbolSize":28.685715,
           "x":-266.82776,
@@ -44,8 +46,10 @@ export default {
           "id":"1",
           "name":"Napoleon",
           "label":{
-            "formatter":"Napoleon",
-            "show":false
+            "normal":{
+              "formatter":"Napoleon",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":-418.08344,
@@ -60,8 +64,10 @@ export default {
           "id":"2",
           "name":"MlleBaptistine",
           "label":{
-            "formatter":"MlleBaptistine",
-            "show":false
+            "normal":{
+              "formatter":"MlleBaptistine",
+              "show":false
+            }
           },
           "symbolSize":9.485714,
           "x":-212.76357,
@@ -76,8 +82,10 @@ export default {
           "id":"3",
           "name":"MmeMagloire",
           "label":{
-            "formatter":"MmeMagloire",
-            "show":false
+            "normal":{
+              "formatter":"MmeMagloire",
+              "show":false
+            }
           },
           "symbolSize":9.485714,
           "x":-242.82404,
@@ -92,8 +100,10 @@ export default {
           "id":"4",
           "name":"CountessDeLo",
           "label":{
-            "formatter":"CountessDeLo",
-            "show":false
+            "normal":{
+              "formatter":"CountessDeLo",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":-379.30386,
@@ -108,8 +118,10 @@ export default {
           "id":"5",
           "name":"Geborand",
           "label":{
-            "formatter":"Geborand",
-            "show":false
+            "normal":{
+              "formatter":"Geborand",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":-417.26337,
@@ -124,8 +136,10 @@ export default {
           "id":"6",
           "name":"Champtercier",
           "label":{
-            "formatter":"Champtercier",
-            "show":false
+            "normal":{
+              "formatter":"Champtercier",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":-332.6012,
@@ -140,8 +154,10 @@ export default {
           "id":"7",
           "name":"Cravatte",
           "label":{
-            "formatter":"Cravatte",
-            "show":false
+            "normal":{
+              "formatter":"Cravatte",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":-382.69568,
@@ -156,8 +172,10 @@ export default {
           "id":"8",
           "name":"Count",
           "label":{
-            "formatter":"Count",
-            "show":false
+            "normal":{
+              "formatter":"Count",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":-320.384,
@@ -172,8 +190,10 @@ export default {
           "id":"9",
           "name":"OldMan",
           "label":{
-            "formatter":"OldMan",
-            "show":false
+            "normal":{
+              "formatter":"OldMan",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":-344.39832,
@@ -188,8 +208,10 @@ export default {
           "id":"10",
           "name":"Labarre",
           "label":{
-            "formatter":"Labarre",
-            "show":false
+            "normal":{
+              "formatter":"Labarre",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":-89.34107,
@@ -204,8 +226,10 @@ export default {
           "id":"11",
           "name":"Valjean",
           "label":{
-            "formatter":"Valjean",
-            "show":  false
+            "normal":{
+              "formatter":"Valjean",
+              "show":  false
+            }
           },
           "symbolSize":100,
           "x":-87.93029,
@@ -220,8 +244,10 @@ export default {
           "id":"12",
           "name":"Marguerite",
           "label":{
-            "formatter":"Marguerite",
-            "show":false
+            "normal":{
+              "formatter":"Marguerite",
+              "show":false
+            }
           },
           "symbolSize":6.742859,
           "x":-339.77908,
@@ -236,8 +262,10 @@ export default {
           "id":"13",
           "name":"MmeDeR",
           "label":{
-            "formatter":"MmeDeR",
-            "show":false
+            "normal":{
+              "formatter":"MmeDeR",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":-194.31313,
@@ -252,8 +280,10 @@ export default {
           "id":"14",
           "name":"Isabeau",
           "label":{
-            "formatter":"Isabeau",
-            "show":false
+            "normal":{
+              "formatter":"Isabeau",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":-158.05168,
@@ -268,8 +298,10 @@ export default {
           "id":"15",
           "name":"Gervais",
           "label":{
-            "formatter":"Gervais",
-            "show":false
+            "normal":{
+              "formatter":"Gervais",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":-127.701546,
@@ -284,8 +316,10 @@ export default {
           "id":"16",
           "name":"Tholomyes",
           "label":{
-            "formatter":"Tholomyes",
-            "show":false
+            "normal":{
+              "formatter":"Tholomyes",
+              "show":false
+            }
           },
           "symbolSize":25.942856,
           "x":-385.2226,
@@ -300,8 +334,10 @@ export default {
           "id":"17",
           "name":"Listolier",
           "label":{
-            "formatter":"Listolier",
-            "show":false
+            "normal":{
+              "formatter":"Listolier",
+              "show":false
+            }
           },
           "symbolSize":20.457146,
           "x":-516.55884,
@@ -316,8 +352,10 @@ export default {
           "id":"18",
           "name":"Fameuil",
           "label":{
-            "formatter":"Fameuil",
-            "show":false
+            "normal":{
+              "formatter":"Fameuil",
+              "show":false
+            }
           },
           "symbolSize":20.457146,
           "x":-464.79382,
@@ -332,8 +370,10 @@ export default {
           "id":"19",
           "name":"Blacheville",
           "label":{
-            "formatter":"Blacheville",
-            "show":false
+            "normal":{
+              "formatter":"Blacheville",
+              "show":false
+            }
           },
           "symbolSize":20.457146,
           "x":-515.1624,
@@ -348,8 +388,10 @@ export default {
           "id":"20",
           "name":"Favourite",
           "label":{
-            "formatter":"Favourite",
-            "show":false
+            "normal":{
+              "formatter":"Favourite",
+              "show":false
+            }
           },
           "symbolSize":20.457146,
           "x":-408.12122,
@@ -364,8 +406,10 @@ export default {
           "id":"21",
           "name":"Dahlia",
           "label":{
-            "formatter":"Dahlia",
-            "show":false
+            "normal":{
+              "formatter":"Dahlia",
+              "show":false
+            }
           },
           "symbolSize":20.457146,
           "x":-456.44113,
@@ -380,8 +424,10 @@ export default {
           "id":"22",
           "name":"Zephine",
           "label":{
-            "formatter":"Zephine",
-            "show":false
+            "normal":{
+              "formatter":"Zephine",
+              "show":false
+            }
           },
           "symbolSize":20.457146,
           "x":-459.1107,
@@ -396,8 +442,10 @@ export default {
           "id":"23",
           "name":"Fantine",
           "label":{
-            "formatter":"Fantine",
-            "show":  false
+            "normal":{
+              "formatter":"Fantine",
+              "show":  false
+            }
           },
           "symbolSize":42.4,
           "x":-313.42786,
@@ -412,8 +460,10 @@ export default {
           "id":"24",
           "name":"MmeThenardier",
           "label":{
-            "formatter":"MmeThenardier",
-            "show":  false
+            "normal":{
+              "formatter":"MmeThenardier",
+              "show":  false
+            }
           },
           "symbolSize":31.428574,
           "x":4.6313396,
@@ -428,8 +478,10 @@ export default {
           "id":"25",
           "name":"Thenardier",
           "label":{
-            "formatter":"Thenardier",
-            "show":  false
+            "normal":{
+              "formatter":"Thenardier",
+              "show":  false
+            }
           },
           "symbolSize":45.142853,
           "x":82.80825,
@@ -444,8 +496,10 @@ export default {
           "id":"26",
           "name":"Cosette",
           "label":{
-            "formatter":"Cosette",
-            "show":  false
+            "normal":{
+              "formatter":"Cosette",
+              "show":  false
+            }
           },
           "symbolSize":31.428574,
           "x":78.64646,
@@ -460,8 +514,10 @@ export default {
           "id":"27",
           "name":"Javert",
           "label":{
-            "formatter":"Javert",
-            "show":  false
+            "normal":{
+              "formatter":"Javert",
+              "show":  false
+            }
           },
           "symbolSize":47.88571,
           "x":-81.46074,
@@ -476,8 +532,10 @@ export default {
           "id":"28",
           "name":"Fauchelevent",
           "label":{
-            "formatter":"Fauchelevent",
-            "show":false
+            "normal":{
+              "formatter":"Fauchelevent",
+              "show":false
+            }
           },
           "symbolSize":12.228573,
           "x":-225.73984,
@@ -492,8 +550,10 @@ export default {
           "id":"29",
           "name":"Bamatabois",
           "label":{
-            "formatter":"Bamatabois",
-            "show":false
+            "normal":{
+              "formatter":"Bamatabois",
+              "show":false
+            }
           },
           "symbolSize":23.2,
           "x":-385.6842,
@@ -508,8 +568,10 @@ export default {
           "id":"30",
           "name":"Perpetue",
           "label":{
-            "formatter":"Perpetue",
-            "show":false
+            "normal":{
+              "formatter":"Perpetue",
+              "show":false
+            }
           },
           "symbolSize":6.742859,
           "x":-403.92447,
@@ -524,8 +586,10 @@ export default {
           "id":"31",
           "name":"Simplice",
           "label":{
-            "formatter":"Simplice",
-            "show":false
+            "normal":{
+              "formatter":"Simplice",
+              "show":false
+            }
           },
           "symbolSize":12.228573,
           "x":-281.4253,
@@ -540,8 +604,10 @@ export default {
           "id":"32",
           "name":"Scaufflaire",
           "label":{
-            "formatter":"Scaufflaire",
-            "show":false
+            "normal":{
+              "formatter":"Scaufflaire",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":-122.41348,
@@ -556,8 +622,10 @@ export default {
           "id":"33",
           "name":"Woman1",
           "label":{
-            "formatter":"Woman1",
-            "show":false
+            "normal":{
+              "formatter":"Woman1",
+              "show":false
+            }
           },
           "symbolSize":6.742859,
           "x":-234.6001,
@@ -572,8 +640,10 @@ export default {
           "id":"34",
           "name":"Judge",
           "label":{
-            "formatter":"Judge",
-            "show":false
+            "normal":{
+              "formatter":"Judge",
+              "show":false
+            }
           },
           "symbolSize":17.714287,
           "x":-387.84915,
@@ -588,8 +658,10 @@ export default {
           "id":"35",
           "name":"Champmathieu",
           "label":{
-            "formatter":"Champmathieu",
-            "show":false
+            "normal":{
+              "formatter":"Champmathieu",
+              "show":false
+            }
           },
           "symbolSize":17.714287,
           "x":-338.2307,
@@ -604,8 +676,10 @@ export default {
           "id":"36",
           "name":"Brevet",
           "label":{
-            "formatter":"Brevet",
-            "show":false
+            "normal":{
+              "formatter":"Brevet",
+              "show":false
+            }
           },
           "symbolSize":17.714287,
           "x":-453.26874,
@@ -620,8 +694,10 @@ export default {
           "id":"37",
           "name":"Chenildieu",
           "label":{
-            "formatter":"Chenildieu",
-            "show":false
+            "normal":{
+              "formatter":"Chenildieu",
+              "show":false
+            }
           },
           "symbolSize":17.714287,
           "x":-386.44904,
@@ -636,8 +712,10 @@ export default {
           "id":"38",
           "name":"Cochepaille",
           "label":{
-            "formatter":"Cochepaille",
-            "show":false
+            "normal":{
+              "formatter":"Cochepaille",
+              "show":false
+            }
           },
           "symbolSize":17.714287,
           "x":-446.7876,
@@ -652,8 +730,10 @@ export default {
           "id":"39",
           "name":"Pontmercy",
           "label":{
-            "formatter":"Pontmercy",
-            "show":false
+            "normal":{
+              "formatter":"Pontmercy",
+              "show":false
+            }
           },
           "symbolSize":9.485714,
           "x":336.49738,
@@ -668,8 +748,10 @@ export default {
           "id":"40",
           "name":"Boulatruelle",
           "label":{
-            "formatter":"Boulatruelle",
-            "show":false
+            "normal":{
+              "formatter":"Boulatruelle",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":29.187843,
@@ -684,8 +766,10 @@ export default {
           "id":"41",
           "name":"Eponine",
           "label":{
-            "formatter":"Eponine",
-            "show":  false
+            "normal":{
+              "formatter":"Eponine",
+              "show":  false
+            }
           },
           "symbolSize":31.428574,
           "x":238.36697,
@@ -700,8 +784,10 @@ export default {
           "id":"42",
           "name":"Anzelma",
           "label":{
-            "formatter":"Anzelma",
-            "show":false
+            "normal":{
+              "formatter":"Anzelma",
+              "show":false
+            }
           },
           "symbolSize":9.485714,
           "x":189.69513,
@@ -716,8 +802,10 @@ export default {
           "id":"43",
           "name":"Woman2",
           "label":{
-            "formatter":"Woman2",
-            "show":false
+            "normal":{
+              "formatter":"Woman2",
+              "show":false
+            }
           },
           "symbolSize":9.485714,
           "x":-187.00418,
@@ -732,8 +820,10 @@ export default {
           "id":"44",
           "name":"MotherInnocent",
           "label":{
-            "formatter":"MotherInnocent",
-            "show":false
+            "normal":{
+              "formatter":"MotherInnocent",
+              "show":false
+            }
           },
           "symbolSize":6.742859,
           "x":-252.99521,
@@ -748,8 +838,10 @@ export default {
           "id":"45",
           "name":"Gribier",
           "label":{
-            "formatter":"Gribier",
-            "show":false
+            "normal":{
+              "formatter":"Gribier",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":-296.07935,
@@ -764,8 +856,10 @@ export default {
           "id":"46",
           "name":"Jondrette",
           "label":{
-            "formatter":"Jondrette",
-            "show":false
+            "normal":{
+              "formatter":"Jondrette",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":550.3201,
@@ -780,8 +874,10 @@ export default {
           "id":"47",
           "name":"MmeBurgon",
           "label":{
-            "formatter":"MmeBurgon",
-            "show":false
+            "normal":{
+              "formatter":"MmeBurgon",
+              "show":false
+            }
           },
           "symbolSize":6.742859,
           "x":488.13535,
@@ -796,8 +892,10 @@ export default {
           "id":"48",
           "name":"Gavroche",
           "label":{
-            "formatter":"Gavroche",
-            "show":  false
+            "normal":{
+              "formatter":"Gavroche",
+              "show":  false
+            }
           },
           "symbolSize":61.600006,
           "x":387.89572,
@@ -812,8 +910,10 @@ export default {
           "id":"49",
           "name":"Gillenormand",
           "label":{
-            "formatter":"Gillenormand",
-            "show":false
+            "normal":{
+              "formatter":"Gillenormand",
+              "show":false
+            }
           },
           "symbolSize":20.457146,
           "x":126.4831,
@@ -828,8 +928,10 @@ export default {
           "id":"50",
           "name":"Magnon",
           "label":{
-            "formatter":"Magnon",
-            "show":false
+            "normal":{
+              "formatter":"Magnon",
+              "show":false
+            }
           },
           "symbolSize":6.742859,
           "x":127.07365,
@@ -844,8 +946,10 @@ export default {
           "id":"51",
           "name":"MlleGillenormand",
           "label":{
-            "formatter":"MlleGillenormand",
-            "show":false
+            "normal":{
+              "formatter":"MlleGillenormand",
+              "show":false
+            }
           },
           "symbolSize":20.457146,
           "x":162.63559,
@@ -860,8 +964,10 @@ export default {
           "id":"52",
           "name":"MmePontmercy",
           "label":{
-            "formatter":"MmePontmercy",
-            "show":false
+            "normal":{
+              "formatter":"MmePontmercy",
+              "show":false
+            }
           },
           "symbolSize":6.742859,
           "x":353.66415,
@@ -876,8 +982,10 @@ export default {
           "id":"53",
           "name":"MlleVaubois",
           "label":{
-            "formatter":"MlleVaubois",
-            "show":false
+            "normal":{
+              "formatter":"MlleVaubois",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":165.43939,
@@ -892,8 +1000,10 @@ export default {
           "id":"54",
           "name":"LtGillenormand",
           "label":{
-            "formatter":"LtGillenormand",
-            "show":false
+            "normal":{
+              "formatter":"LtGillenormand",
+              "show":false
+            }
           },
           "symbolSize":12.228573,
           "x":137.69348,
@@ -908,8 +1018,10 @@ export default {
           "id":"55",
           "name":"Marius",
           "label":{
-            "formatter":"Marius",
-            "show":  false
+            "normal":{
+              "formatter":"Marius",
+              "show":  false
+            }
           },
           "symbolSize":53.37143,
           "x":206.44687,
@@ -924,8 +1036,10 @@ export default {
           "id":"56",
           "name":"BaronessT",
           "label":{
-            "formatter":"BaronessT",
-            "show":false
+            "normal":{
+              "formatter":"BaronessT",
+              "show":false
+            }
           },
           "symbolSize":6.742859,
           "x":194.82993,
@@ -940,8 +1054,10 @@ export default {
           "id":"57",
           "name":"Mabeuf",
           "label":{
-            "formatter":"Mabeuf",
-            "show":  false
+            "normal":{
+              "formatter":"Mabeuf",
+              "show":  false
+            }
           },
           "symbolSize":31.428574,
           "x":597.6618,
@@ -956,8 +1072,10 @@ export default {
           "id":"58",
           "name":"Enjolras",
           "label":{
-            "formatter":"Enjolras",
-            "show":  false
+            "normal":{
+              "formatter":"Enjolras",
+              "show":  false
+            }
           },
           "symbolSize":42.4,
           "x":355.78366,
@@ -972,8 +1090,10 @@ export default {
           "id":"59",
           "name":"Combeferre",
           "label":{
-            "formatter":"Combeferre",
-            "show":  false
+            "normal":{
+              "formatter":"Combeferre",
+              "show":  false
+            }
           },
           "symbolSize":31.428574,
           "x":515.2961,
@@ -988,8 +1108,10 @@ export default {
           "id":"60",
           "name":"Prouvaire",
           "label":{
-            "formatter":"Prouvaire",
-            "show":false
+            "normal":{
+              "formatter":"Prouvaire",
+              "show":false
+            }
           },
           "symbolSize":25.942856,
           "x":614.29285,
@@ -1004,8 +1126,10 @@ export default {
           "id":"61",
           "name":"Feuilly",
           "label":{
-            "formatter":"Feuilly",
-            "show":  false
+            "normal":{
+              "formatter":"Feuilly",
+              "show":  false
+            }
           },
           "symbolSize":31.428574,
           "x":550.1917,
@@ -1020,8 +1144,10 @@ export default {
           "id":"62",
           "name":"Courfeyrac",
           "label":{
-            "formatter":"Courfeyrac",
-            "show":  false
+            "normal":{
+              "formatter":"Courfeyrac",
+              "show":  false
+            }
           },
           "symbolSize":36.91429,
           "x":436.17184,
@@ -1036,8 +1162,10 @@ export default {
           "id":"63",
           "name":"Bahorel",
           "label":{
-            "formatter":"Bahorel",
-            "show":  false
+            "normal":{
+              "formatter":"Bahorel",
+              "show":  false
+            }
           },
           "symbolSize":34.17143,
           "x":602.55225,
@@ -1052,8 +1180,10 @@ export default {
           "id":"64",
           "name":"Bossuet",
           "label":{
-            "formatter":"Bossuet",
-            "show":  false
+            "normal":{
+              "formatter":"Bossuet",
+              "show":  false
+            }
           },
           "symbolSize":36.91429,
           "x":455.81955,
@@ -1068,8 +1198,10 @@ export default {
           "id":"65",
           "name":"Joly",
           "label":{
-            "formatter":"Joly",
-            "show":  false
+            "normal":{
+              "formatter":"Joly",
+              "show":  false
+            }
           },
           "symbolSize":34.17143,
           "x":516.40784,
@@ -1084,8 +1216,10 @@ export default {
           "id":"66",
           "name":"Grantaire",
           "label":{
-            "formatter":"Grantaire",
-            "show":false
+            "normal":{
+              "formatter":"Grantaire",
+              "show":false
+            }
           },
           "symbolSize":28.685715,
           "x":646.4313,
@@ -1100,8 +1234,10 @@ export default {
           "id":"67",
           "name":"MotherPlutarch",
           "label":{
-            "formatter":"MotherPlutarch",
-            "show":false
+            "normal":{
+              "formatter":"MotherPlutarch",
+              "show":false
+            }
           },
           "symbolSize":4,
           "x":668.9568,
@@ -1116,8 +1252,10 @@ export default {
           "id":"68",
           "name":"Gueulemer",
           "label":{
-            "formatter":"Gueulemer",
-            "show":false
+            "normal":{
+              "formatter":"Gueulemer",
+              "show":false
+            }
           },
           "symbolSize":28.685715,
           "x":78.4799,
@@ -1132,8 +1270,10 @@ export default {
           "id":"69",
           "name":"Babet",
           "label":{
-            "formatter":"Babet",
-            "show":false
+            "normal":{
+              "formatter":"Babet",
+              "show":false
+            }
           },
           "symbolSize":28.685715,
           "x":150.35959,
@@ -1148,8 +1288,10 @@ export default {
           "id":"70",
           "name":"Claquesous",
           "label":{
-            "formatter":"Claquesous",
-            "show":false
+            "normal":{
+              "formatter":"Claquesous",
+              "show":false
+            }
           },
           "symbolSize":28.685715,
           "x":137.3717,
@@ -1164,8 +1306,10 @@ export default {
           "id":"71",
           "name":"Montparnasse",
           "label":{
-            "formatter":"Montparnasse",
-            "show":false
+            "normal":{
+              "formatter":"Montparnasse",
+              "show":false
+            }
           },
           "symbolSize":25.942856,
           "x":234.87747,
@@ -1180,8 +1324,10 @@ export default {
           "id":"72",
           "name":"Toussaint",
           "label":{
-            "formatter":"Toussaint",
-            "show":false
+            "normal":{
+              "formatter":"Toussaint",
+              "show":false
+            }
           },
           "symbolSize":9.485714,
           "x":40.942253,
@@ -1196,8 +1342,10 @@ export default {
           "id":"73",
           "name":"Child1",
           "label":{
-            "formatter":"Child1",
-            "show":false
+            "normal":{
+              "formatter":"Child1",
+              "show":false
+            }
           },
           "symbolSize":6.742859,
           "x":437.939,
@@ -1212,8 +1360,10 @@ export default {
           "id":"74",
           "name":"Child2",
           "label":{
-            "formatter":"Child2",
-            "show":false
+            "normal":{
+              "formatter":"Child2",
+              "show":false
+            }
           },
           "symbolSize":6.742859,
           "x":466.04922,
@@ -1228,8 +1378,10 @@ export default {
           "id":"75",
           "name":"Brujon",
           "label":{
-            "formatter":"Brujon",
-            "show":false
+            "normal":{
+              "formatter":"Brujon",
+              "show":false
+            }
           },
           "symbolSize":20.457146,
           "x":238.79364,
@@ -1244,8 +1396,10 @@ export default {
           "id":"76",
           "name":"MmeHucheloup",
           "label":{
-            "formatter":"MmeHucheloup",
-            "show":false
+            "normal":{
+              "formatter":"MmeHucheloup",
+              "show":false
+            }
           },
           "symbolSize":20.457146,
           "x":712.18353,
@@ -2814,10 +2968,14 @@ export default {
       ],
       "roam":true,
       "label":{
-        "position":"right"
+        "normal":{
+          "position":"right"
+        }
       },
       "lineStyle":{
-        "curveness":0.3
+        "normal":{
+          "curveness":0.3
+        }
       }
     }
   ]

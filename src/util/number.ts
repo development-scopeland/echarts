@@ -233,27 +233,11 @@ export function getPercentWithPrecision(valueList: number[], idx: number, precis
         return 0;
     }
 
-    const seats = getPercentSeats(valueList, precision);
-
-    return seats[idx] || 0;
-}
-
-/**
- * Get a data of given precision, assuring the sum of percentages
- * in valueList is 1.
- * The largest remainer method is used.
- * https://en.wikipedia.org/wiki/Largest_remainder_method
- *
- * @param valueList a list of all data
- * @param precision integer number showing digits of precision
- * @return {Array<number>}
- */
-export function getPercentSeats(valueList: number[], precision: number): number[] {
     const sum = zrUtil.reduce(valueList, function (acc, val) {
         return acc + (isNaN(val) ? 0 : val);
     }, 0);
     if (sum === 0) {
-        return [];
+        return 0;
     }
 
     const digits = Math.pow(10, precision);
@@ -291,9 +275,8 @@ export function getPercentSeats(valueList: number[], precision: number): number[
         remainder[maxId] = 0;
         ++currentSum;
     }
-    return zrUtil.map(seats, function (seat) {
-        return seat / digits;
-    });
+
+    return seats[idx] / digits;
 }
 
 /**

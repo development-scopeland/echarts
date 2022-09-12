@@ -43,6 +43,8 @@ class SingleAxis extends Axis {
 
     orient: LayoutOrient;
 
+    reverse: boolean;
+
     coordinateSystem: Single;
 
     model: SingleAxisModel;

@@ -170,9 +170,8 @@ export interface GaugeSeriesOption extends SeriesOption<GaugeStateOption, GaugeS
         lineStyle?: LineStyleOption
     }
 
-    axisLabel?: Omit<LabelOption, 'rotate'> & {
+    axisLabel?: LabelOption & {
         formatter?: LabelFormatter | string
-        rotate?: 'tangential' | 'radial' | number
     }
 
     pointer?: PointerOption
@@ -266,8 +265,7 @@ class GaugeSeriesModel extends SeriesModel<GaugeSeriesOption> {
             distance: 15,
             // formatter: null,
             color: '#464646',
-            fontSize: 12,
-            rotate: 0
+            fontSize: 12
         },
         pointer: {
             icon: null,

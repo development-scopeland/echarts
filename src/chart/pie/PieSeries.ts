@@ -20,7 +20,7 @@
 import createSeriesDataSimply from '../helper/createSeriesDataSimply';
 import * as zrUtil from 'zrender/src/core/util';
 import * as modelUtil from '../../util/model';
-import { getPercentSeats } from '../../util/number';
+import { getPercentWithPrecision } from '../../util/number';
 import { makeSeriesEncodeForNameBased } from '../../data/helper/sourceHelper';
 import LegendVisualProvider from '../../visual/LegendVisualProvider';
 import SeriesModel from '../../model/Series';
@@ -133,8 +133,6 @@ class PieSeriesModel extends SeriesModel<PieSeriesOption> {
 
     static type = 'series.pie' as const;
 
-    seats: number[];
-
     /**
      * @overwrite
      */
@@ -161,25 +159,31 @@ class PieSeriesModel extends SeriesModel<PieSeriesOption> {
      * @overwrite
      */
     getInitialData(this: PieSeriesModel): SeriesData {
-        const data = createSeriesDataSimply(this, {
+        return createSeriesDataSimply(this, {
             coordDimensions: ['value'],
             encodeDefaulter: zrUtil.curry(makeSeriesEncodeForNameBased, this)
         });
-        const valueList:number[] = [];
-        data.each(data.mapDimension('value'), function (value: number) {
-            valueList.push(value);
-        });
-
-        this.seats = getPercentSeats(valueList, data.hostModel.get('percentPrecision'));
-        return data;
     }
 
     /**
      * @overwrite
      */
     getDataParams(dataIndex: number): PieCallbackDataParams {
+        const data = this.getData();
         const params = super.getDataParams(dataIndex) as PieCallbackDataParams;
-        params.percent = this.seats[dataIndex];
+        // FIXME toFixed?
+
+        const valueList: number[] = [];
+        data.each(data.mapDimension('value'), function (value: number) {
+            valueList.push(value);
+        });
+
+        params.percent = getPercentWithPrecision(
+            valueList,
+            dataIndex,
+            data.hostModel.get('percentPrecision')
+        );
+
         params.$vars.push('percent');
         return params;
     }

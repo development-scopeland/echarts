@@ -36,8 +36,6 @@ function BMapCoordSys(bmap, api) {
     this._projection = new BMap.MercatorProjection();
 }
 
-BMapCoordSys.prototype.type = 'bmap';
-
 BMapCoordSys.prototype.dimensions = ['lng', 'lat'];
 
 BMapCoordSys.prototype.setZoom = function (zoom) {
@@ -107,15 +105,6 @@ BMapCoordSys.prototype.prepareCustoms = function () {
             size: zrUtil.bind(dataToCoordSize, this)
         }
     };
-};
-
-BMapCoordSys.prototype.convertToPixel = function (ecModel, finder, value) {
-    // here we ignore finder as only one bmap component is allowed
-    return this.dataToPoint(value);
-};
-
-BMapCoordSys.prototype.convertFromPixel = function (ecModel, finder, value) {
-    return this.pointToData(value);
 };
 
 function dataToCoordSize(dataSize, dataItem) {
@@ -240,9 +229,6 @@ BMapCoordSys.create = function (ecModel, api) {
             seriesModel.coordinateSystem = bmapCoordSys;
         }
     });
-
-    // return created coordinate systems
-    return bmapCoordSys && [bmapCoordSys];
 };
 
 export default BMapCoordSys;

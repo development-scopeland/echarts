@@ -268,14 +268,16 @@ export function resizePath(path: SVGPath, rect: ZRRectLike): void {
 /**
  * Sub pixel optimize line for canvas
  */
-export function subPixelOptimizeLine(
+export function subPixelOptimizeLine(param: {
     shape: {
         x1: number, y1: number, x2: number, y2: number
     },
-    lineWidth: number
-) {
-    subPixelOptimizeUtil.subPixelOptimizeLine(shape, shape, {lineWidth});
-    return shape;
+    style: {
+        lineWidth: number
+    }
+}) {
+    subPixelOptimizeUtil.subPixelOptimizeLine(param.shape, param.shape, param.style);
+    return param;
 }
 
 /**

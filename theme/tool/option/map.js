@@ -35,11 +35,11 @@ export default {
             map: 'china',
             showLegendSymbol: true,
             label: {
-                show: false,
-            },
-            emphasis: {
-                label: {
-                    show: false,
+                normal: {
+                    show: false
+                },
+                emphasis: {
+                    show: false
                 }
             },
             data:[
@@ -85,10 +85,10 @@ export default {
             mapType: 'china',
             showLegendSymbol: true,
             label: {
-                show: false,
-            },
-            emphasis: {
-                label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
                     show: false
                 }
             },
@@ -120,10 +120,10 @@ export default {
             mapType: 'china',
             showLegendSymbol: true,
             label: {
-                show: false,
-            },
-            emphasis: {
-                label: {
+                normal: {
+                    show: false
+                },
+                emphasis: {
                     show: false
                 }
             },

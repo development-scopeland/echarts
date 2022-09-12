@@ -99,7 +99,6 @@ import {
     applyKeyframeAnimation,
     stopPreviousKeyframeAnimationAndRestore
 } from '../../animation/customGraphicKeyframeAnimation';
-import type SeriesModel from '../../model/Series';
 
 const EMPHASIS = 'emphasis' as const;
 const NORMAL = 'normal' as const;
@@ -237,7 +236,7 @@ export default class CustomChartView extends ChartView {
             })
             .remove(function (oldIdx) {
                 const el = oldData.getItemGraphicEl(oldIdx);
-                el && applyLeaveTransition(el, customInnerStore(el).option, customSeries);
+                applyLeaveTransition(el, customInnerStore(el).option, customSeries);
             })
             .update(function (newIdx, oldIdx) {
                 const oldEl = oldData.getItemGraphicEl(oldIdx);
@@ -1273,21 +1272,16 @@ function retrieveStyleOptionOnState(
 
 
 // Usage:
-// (1) By default, `elOption.$mergeChildren` is `'byIndex'`, which indicates
-//     that the existing children will not be removed, and enables the feature
-//     that update some of the props of some of the children simply by construct
+// (1) By default, `elOption.$mergeChildren` is `'byIndex'`, which indicates that
+//     the existing children will not be removed, and enables the feature that
+//     update some of the props of some of the children simply by construct
 //     the returned children of `renderItem` like:
 //     `var children = group.children = []; children[3] = {opacity: 0.5};`
 // (2) If `elOption.$mergeChildren` is `'byName'`, add/update/remove children
 //     by child.name. But that might be lower performance.
 // (3) If `elOption.$mergeChildren` is `false`, the existing children will be
 //     replaced totally.
-// (4) If `!elOption.children`, following the "merge" principle, nothing will
-//     happen.
-// (5) If `elOption.$mergeChildren` is not `false` neither `'byName'` and the
-//     `el` is a group, and if any of the new child is null, it means to remove
-//     the element at the same index, if exists. On the other hand, if the new
-//     child is and empty object `{}`, it means to keep the element not changed.
+// (4) If `!elOption.children`, following the "merge" principle, nothing will happen.
 //
 // For implementation simpleness, do not provide a direct way to remove sinlge
 // child (otherwise the total indicies of the children array have to be modified).
@@ -1330,57 +1324,22 @@ function mergeChildren(
     // might be better performance.
     let index = 0;
     for (; index < newLen; index++) {
-        const newChild = newChildren[index];
-        const oldChild = el.childAt(index);
-        if (newChild) {
-            if (newChild.ignore == null) {
-                // The old child is set to be ignored if null (see comments
-                // below). So we need to set ignore to be false back.
-                newChild.ignore = false;
-            }
-            doCreateOrUpdateEl(
-                api,
-                oldChild,
-                dataIndex,
-                newChild as CustomElementOption,
-                seriesModel,
-                el
-            );
-        }
-        else {
-            if (__DEV__) {
-                assert(
-                    oldChild,
-                    'renderItem should not return a group containing elements'
-                    + ' as null/undefined/{} if they do not exist before.'
-                );
-            }
-            // If the new element option is null, it means to remove the old
-            // element. But we cannot really remove the element from the group
-            // directly, because the element order may not be stable when this
-            // element is added back. So we set the element to be ignored.
-            oldChild.ignore = true;
-        }
+        newChildren[index] && doCreateOrUpdateEl(
+            api,
+            el.childAt(index),
+            dataIndex,
+            newChildren[index] as CustomElementOption,
+            seriesModel,
+            el
+        );
     }
     for (let i = el.childCount() - 1; i >= index; i--) {
+        // Do not supprot leave elements that are not mentioned in the latest
+        // `renderItem` return. Otherwise users may not have a clear and simple
+        // concept that how to contorl all of the elements.
         const child = el.childAt(i);
-        removeChildFromGroup(el, child, seriesModel);
+        applyLeaveTransition(child, customInnerStore(el).option, seriesModel);
     }
-}
-
-function removeChildFromGroup(
-    group: graphicUtil.Group,
-    child: Element,
-    seriesModel: SeriesModel
-) {
-    // Do not support leave elements that are not mentioned in the latest
-    // `renderItem` return. Otherwise users may not have a clear and simple
-    // concept that how to control all of the elements.
-    child && applyLeaveTransition(
-        child,
-        customInnerStore(group).option,
-        seriesModel
-    );
 }
 
 type DiffGroupContext = {
@@ -1432,7 +1391,7 @@ function processAddUpdate(
 function processRemove(this: DataDiffer<DiffGroupContext>, oldIndex: number): void {
     const context = this.context;
     const child = context.oldChildren[oldIndex];
-    child && applyLeaveTransition(child, customInnerStore(child).option, context.seriesModel);
+    applyLeaveTransition(child, customInnerStore(child).option, context.seriesModel);
 }
 
 /**

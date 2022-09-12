@@ -137,7 +137,6 @@ const app = new Vue({
             expectedVersion: null,
 
             renderer: 'canvas',
-            useCoarsePointer: 'auto',
             threads: 4
         }, urlRunConfig)
     },
@@ -345,9 +344,6 @@ const app = new Vue({
             if (test.useSVG) {
                 searches.push('__RENDERER__=svg');
             }
-            if (test.useCoarsePointer) {
-                searches.push('__COARSE__POINTER__=true');
-            }
             let src = test.fileUrl;
             if (searches.length) {
                 src = src + '?' + searches.join('&');
@@ -370,7 +366,6 @@ const app = new Vue({
             this.runConfig.isExpectedNightly = runResult.expectedVersion.includes('-dev.');
             this.runConfig.isActualNightly = runResult.actualVersion.includes('-dev.');
             this.runConfig.renderer = runResult.renderer;
-            this.runConfig.useCoarsePointer = runResult.useCoarsePointer;
 
             this.showRunsDialog = false;
         },
@@ -423,7 +418,6 @@ function runTests(tests, noHeadless) {
         actualVersion: app.runConfig.actualVersion,
         threads: app.runConfig.threads,
         renderer: app.runConfig.renderer,
-        useCoarsePointer: app.runConfig.useCoarsePointer,
         noHeadless,
         replaySpeed: noHeadless ? 5 : 5
     });
